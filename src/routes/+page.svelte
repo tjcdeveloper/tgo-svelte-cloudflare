@@ -1,59 +1,51 @@
 <script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	import TextSection from '../components/TextSection.svelte';
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>The Game Organiser</title>
+	<meta name="description"
+				content="Keep track of your board game collection, share your collection with friends, and arrange board game events where attendees can vote on which board games to play." />
 </svelte:head>
 
-<section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
-
-		to your new<br />SvelteKit app
+<TextSection>
+	<h1 slot="header">
+		The Game Organiser
 	</h1>
+	<main slot="main">
+		<p>
+			Welcome to the game organiser website, where you and your friends can store lists of games, including those you
+			own and those you want to buy in a wishlist. You can share your collections with friends, rate the games, and note
+			down how many players is best for each game.
+		</p>
+		<p>
+			On top of creating collections, you can arrange events between you and your friends where you can create a poll on
+			available days to find when works best for you. Once selected you can discuss which games you would like to play
+			that day. If your friends have made their collections "public" or "shared with friends" you can browse through
+			their collection and suggest games for that day and request the friend brings it with them.
+		</p>
+		<p>
+			The website is currently under development and in a private alpha phase. If you would like to be part of this
+			alpha then complete the form below, we promise we will only use your email address to invite you to the alpha
+			test.
+		</p>
+	</main>
+</TextSection>
 
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
+<TextSection>
+	<h2 slot="header">
+		Sign up for the private alpha test
 	</h2>
-
-	<Counter />
-</section>
+	<main slot="main">
+		<p>
+			Please leave your name and email address below if you wish to sign up for the private alpha test.
+		</p>
+		<p>
+			CURRENTLY DISABLED
+		</p>
+	</main>
+</TextSection>
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
 
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
 </style>

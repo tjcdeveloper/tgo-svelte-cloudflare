@@ -256,7 +256,7 @@
 	}
 
 	.grid.playing .row.current {
-		filter: drop-shadow(3px 3px 10px var(--color-bg-0));
+		filter: drop-shadow(3px 3px 10px var(--color-site-bg));
 	}
 
 	.letter {
